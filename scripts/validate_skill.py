@@ -57,7 +57,7 @@ def main() -> int:
         fail("Skill name must use lowercase letters/numbers separated by single hyphens.", problems)
     if len(name) > 64:
         fail("Skill name exceeds 64 characters.", problems)
-    if name != ROOT.name:
+    if name != ROOT.name.lower():
         fail(f"Skill name '{name}' must match directory name '{ROOT.name}'.", problems)
 
     description = fields.get("description", "")
